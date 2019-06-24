@@ -2,7 +2,7 @@ from selenium import webdriver
 from time import sleep
 
 
-URL = "https://careers.veeam.com/" # Путь к старнице
+URL = "https://careers.veeam.com/" # Путь к странице
 COUNTRY = "Romania" # Выбираемая страна
 LANG = ["English",] # Список интересующих языков
 
@@ -23,5 +23,5 @@ for lang in lang_list:
         lang.click() # Выбираем инетерсующие нас варианты
 lang_select.find_element_by_class_name("selecter-fieldset-submit").click() # Применяем выбор языков
 sleep(1) # Ожидаем применения
-count_jobs = browser.find_element_by_class_name("pr0-md-down").text.split(" ")[0] # Находим информацию о количестве подходящих под фильтр вакансий
+count_jobs = browser.find_element_by_class_name("pr0-md-down").text.split(" ")[0] # Находим информацию о количестве попадающих под фильтр вакансий
 print(count_jobs) # Выводим количество вакансий по фильтру
